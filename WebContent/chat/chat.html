@@ -1,0 +1,66 @@
+<head>
+
+</head>
+<div class="container text-center">
+	<div class="row">
+		<h2>Open in chat </h2>
+        <h4>Click Here</h4>
+        <div class="round hollow text-center">
+        <a ng-click="showme='popup-box-on'" href="#chat" id="addClass"><span class="glyphicon glyphicon-comment"></span> Open in chat </a>
+        </div>
+        
+        <hr>
+        
+        MORE :
+        <a target="_blank" href="http://bootsnipp.com/snippets/33ejn"> Chat Box POPUP</a>,
+         <a target="_blank" href="http://bootsnipp.com/snippets/z4P39"> User Profile  </a>
+         
+	</div>
+</div>
+
+
+<div class="popup-box chat-popup {{showme}}" id="qnimate">
+    		  <div class="popup-head">
+				<div class="popup-head-left pull-left">Group Chat</div>
+					  <div class="popup-head-right pull-right">
+
+						
+						<button data-widget="remove" id="removeClass" class="chat-header-button pull-right" type="button"><i class="glyphicon glyphicon-off"></i></button>
+                      </div>
+			  </div>
+			<div class="popup-messages">
+    		
+			
+			<div ng-repeat="message in messages" id="message" class="message" class="direct-chat-messages" style="overflow:auto">
+                    	
+					<!-- Message. Default to the left -->
+                    <div class="direct-chat-msg doted-border" id="xx">
+                     
+                  
+                      <div class="direct-chat-text">
+                        {{message.message}}
+                      </div>
+					  <div class="direct-chat-info clearfix">
+                        <span class="direct-chat-timestamp pull-right">{{message.time | date:'HH:mm'}}</span>
+                      </div>
+					
+                      <!-- /.direct-chat-text -->
+                    </div>
+                    <!-- /.direct-chat-msg -->
+					
+
+                  </div>
+
+			
+			</div>
+			<div class="popup-messages-footer">
+			 <form ng-submit="addMessage()" name="messageForm">
+        
+          
+          
+			<textarea id="status_message" placeholder="Type a message..." rows="2" cols="34" name="message" ng-model="message"></textarea>
+			<button ng-click="myFunction()" ng-disabled="message.length > max || message.length === 0" >Send</button>
+			</form>
+		
+			</div>
+	  </div>
